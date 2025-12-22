@@ -14,5 +14,6 @@ rev = "v4.24.0"
 [[require]]
 name = "checkdecls"
 git = "https://github.com/PatrickMassot/checkdecls.git"
+
 [[lean_lib]]
 name = "fineqs"
