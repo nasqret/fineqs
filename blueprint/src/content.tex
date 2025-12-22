@@ -36,18 +36,29 @@ $\mathbb{P}^{n}(\K)$ & the projective $n$-space over a field $\K$;\\
 $\left[\alpha_{1} \colon\ldots \colon \alpha_{n+1}  \right]$ & a set of homogeneous coordinates for a point in $\mathbb{P}^{n}(\K)$.
 \end{tabular}
 
-\begin{theorem}\label{THM1} Let $X$ be a set with  at most $\frac{q^{n+1}-q}{q-1}$ elements. If $f_{1}, \ldots, f_{k} \in \mathrm{Map}(X,\F)$ for some $k>n$ then there exist $g_{1}, \ldots, g_{n} \in \mathrm{Span}(f_{1}, \ldots, f_{k})$ such that $\mathrm{Z}(g_{1}, \ldots, g_{n})=\mathrm{Z}(f_{1}, \ldots, f_{k})$.
+\begin{theorem}\label{THM1}
+\lean{theorem_1}
+\leanok
+Let $X$ be a set with  at most $\frac{q^{n+1}-q}{q-1}$ elements. If $f_{1}, \ldots, f_{k} \in \mathrm{Map}(X,\F)$ for some $k>n$ then there exist $g_{1}, \ldots, g_{n} \in \mathrm{Span}(f_{1}, \ldots, f_{k})$ such that $\mathrm{Z}(g_{1}, \ldots, g_{n})=\mathrm{Z}(f_{1}, \ldots, f_{k})$.
  \end{theorem}
 
 This theorem is  best possible with respect to  the cardinality of $X$. Indeed, we have the following.
-\begin{proposition}\label{PROP1} For every  field  $\F$ and every positive integer $n$ there are a set $X_{n}$ of cardinality $\frac{q^{n+1}-q}{q-1}+1$, and maps
+\begin{proposition}\label{PROP1}
+\lean{prop_1}
+\uses{matrix_rank_lemma}
+\leanok
+For every  field  $\F$ and every positive integer $n$ there are a set $X_{n}$ of cardinality $\frac{q^{n+1}-q}{q-1}+1$, and maps
 	$f_{1}, \ldots, f_{n+1} \in \mathrm{Map}(X_{n},\F)$ such that
 	$\mathrm{Z}(f_{1}, \ldots, f_{n+1})=\emptyset$ but $\mathrm{Z}(g_{1}, \ldots, g_{n})\ne \emptyset$ for any $g_{1}, \ldots, g_{n} \in \mathrm{Span}(f_{1}, \ldots, f_{n+1})$.
 \end{proposition}
 
+
 We have two immediate corollaries of Theorem \ref{THM1} of interest in  algebraic geometry.
 
 \begin{corollary}\label{wniosek}
+\lean{corollary_2}
+\uses{theorem_1}
+\leanok
 	Let $n > 0$ and let
 	$\phi \colon \mathcal{F} \to \mathrm{Map}(\mathbb{A}^{n}(\F),\F)$ be a homomorphism of vector spaces over $\F$. Any subset of $\mathbb{A}^{n}(\F)$ defined by some members of $\mathcal{F}$ (i.e., the zero locus of their images via $\phi$) can be defined using at most $n$ members of $\mathcal{F}$.
 \end{corollary}
@@ -55,6 +66,9 @@ The space $\mathcal{F}$ can be, for example, a space of polynomials in $n$ varia
 
 
 \begin{corollary}\label{wniosek1}
+\lean{corollary_3 }
+\uses{theorem_1}
+\leanok
 	Let $n \ge 0$ and let
 	$\phi \colon \mathcal{F} \to \mathrm{Map}(\mathbb{P}^{n}(\F),\F)$ be a homomorphism of vector spaces over $\F$. Any nonempty subset of $\mathbb{P}^{n}(\F)$ defined by some members of $\mathcal{F}$ (i.e., the zero locus of their images via $\phi$) can be defined using at most $n$ members of $\mathcal{F}$.
 \end{corollary}
@@ -122,7 +136,10 @@ by the definition of $T$ the set $\mathrm{Z}(g_{1}, \ldots, g_{n})$ is disjoint 
 
 In order to prove Proposition \ref{PROP1} we need the following.
 
-\begin{lemma}\label{matrix thy} Let $\K$ be an arbitrary field.
+\begin{lemma}\label{matrix thy}
+\lean{matrix_rank_lemma}
+\leanok
+Let $\K$ be an arbitrary field.
 For any matrix $A \in M_{n, m}(\K)$ where $n\le m$ there exist a matrix $M \in M_{n, m}(\K)$  in  reduced row echelon form having the rank equal to $n$, and a matrix $B \in M_{n, n}(\K)$ such that
 $A=BM$.
 \end{lemma}
