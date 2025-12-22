@@ -6,16 +6,24 @@
 % the current file can be a simple sequence of \input. Otherwise It
 % can start with a \section or \chapter for instance.
 
-The theorem that any algebraic set in $n$-dimensional space is  the intersection of $n$ hypersurfaces  \footnote{The problem dates back to Kronecker. Its rather dramatic story is briefly presented in \cite{EE}; for much more detailed vivid account consult N. Schappacher's available online presentation \textit{Political Space Curves}.}  has been proved independently by  Storch (\cite{S}), and Eisenbud and Evans (\cite{EE}); both short proofs are ring-theoretic, i.e., one reduces the number of generators of radical ideals.
+The theorem that any algebraic set in $n$-dimensional space is the intersection of $n$ hypersurfaces
+\footnote{The problem dates back to Kronecker. Its rather dramatic story is briefly presented in
+\cite{EE}; for much more detailed vivid account consult N. Schappacher's available online
+presentation \textit{Political Space Curves}.}
+has been proved independently by  Storch (\cite{S}), and Eisenbud and Evans (\cite{EE});
+both short proofs are ring-theoretic, i.e., one reduces the number of generators of radical ideals.
 
 
-In this note we examine closer the finite fields case of the problem. If just the number of equations needed to describe an algebraic set is in question, then the answer is immediate: it is easy to construct a single polynomial defining it. If, however, the nature of defining polynomials (e.g., their total degree) is to be preserved, this problem becomes more interesting.
+In this note we examine closer the finite fields case of the problem. If just the number of
+equations needed to describe an algebraic set is in question, then the answer is immediate:
+it is easy to construct a single polynomial defining it. If, however, the nature of defining
+polynomials (e.g., their total degree) is to be preserved, this problem becomes more interesting.
 
- It turns out that we can avoid dealing with rings; the vector space structure is sufficient and, as in the
- theorem cited above, our result again produces $n$ equations; moreover, we show
- that these new equations can be chosen to be linear combinations with \textit{scalar} coefficients of the old ones, so, roughly speaking, they remain of the same type (see Corollaries \ref{wniosek} and \ref{wniosek1}, with accompanying examples), and our proof is surprisingly elementary.   \\
-
-
+It turns out that we can avoid dealing with rings; the vector space structure is sufficient and,
+as in the theorem cited above, our result again produces $n$ equations; moreover, we show that these new
+equations can be chosen to be linear combinations with \textit{scalar} coefficients of the old ones,
+so, roughly speaking, they remain of the same type (see Corollaries \ref{wniosek} and \ref{wniosek1},
+with accompanying examples), and our proof is surprisingly elementary.   \\
 
 We fix the following notation:\\
 \begin{tabular}{ll}
@@ -28,14 +36,14 @@ $\mathbb{P}^{n}(\K)$ & the projective $n$-space over a field $\K$;\\
 $\left[\alpha_{1} \colon\ldots \colon \alpha_{n+1}  \right]$ & a set of homogeneous coordinates for a point in $\mathbb{P}^{n}(\K)$.
 \end{tabular}
 
-\begin{theorem}\label{THM1}
+\begin{theorem}\label{theorem-1}
 \lean{theorem_1}
 \leanok
 Let $X$ be a set with  at most $\frac{q^{n+1}-q}{q-1}$ elements. If $f_{1}, \ldots, f_{k} \in \mathrm{Map}(X,\F)$ for some $k>n$ then there exist $g_{1}, \ldots, g_{n} \in \mathrm{Span}(f_{1}, \ldots, f_{k})$ such that $\mathrm{Z}(g_{1}, \ldots, g_{n})=\mathrm{Z}(f_{1}, \ldots, f_{k})$.
  \end{theorem}
 
 This theorem is  best possible with respect to  the cardinality of $X$. Indeed, we have the following.
-\begin{proposition}\label{PROP1}
+\begin{proposition}\label{prop-1}
 \lean{prop_1}
 \uses{matrix_rank_lemma}
 \leanok
@@ -44,8 +52,7 @@ For every  field  $\F$ and every positive integer $n$ there are a set $X_{n}$ of
 	$\mathrm{Z}(f_{1}, \ldots, f_{n+1})=\emptyset$ but $\mathrm{Z}(g_{1}, \ldots, g_{n})\ne \emptyset$ for any $g_{1}, \ldots, g_{n} \in \mathrm{Span}(f_{1}, \ldots, f_{n+1})$.
 \end{proposition}
 
-
-We have two immediate corollaries of Theorem \ref{THM1} of interest in  algebraic geometry.
+We have two immediate corollaries of Theorem \ref{theorem-1} of interest in  algebraic geometry.
 
 \begin{corollary}\label{wniosek}
 \lean{corollary_2}
@@ -67,7 +74,7 @@ The space $\mathcal{F}$ can be, for example, a space of polynomials in $n$ varia
 The space $\mathcal{F}$ can be a space of homogeneous polynomials in $n+1$ variables of bounded total degree, the space of quadratic (or higher degree) forms in $n+1$ variables, the space of diagonal forms in $n+1$ variables, etc.\\
 
 
-Before we present the proofs of Theorem \ref{THM1} and Proposition \ref{PROP1}, we separately state their following ingredient.
+Before we present the proofs of Theorem \ref{theorem-1} and Proposition \ref{prop-1}, we separately state their following ingredient.
 
  Let $\K$ be an arbitrary field, and $n$ be a positive integer. Denote by $\mathcal{M}_{n}$ the set of all matrices in $M_{n, n+1}(\K)$ in  reduced row echelon form having the rank equal to $n$, by $N(M)$ the null space of a matrix $M$, by $\theta$ the zero vector in $\K^{n+1}$, and by $\sim$ the equivalence relation which identifies points
  lying on the same line through the origin.
@@ -102,7 +109,7 @@ Since the canonical map
 is bijective, the lemma follows.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{THM1}] It is enough to prove the statement for $k=n+1$ since we may apply induction.
+\begin{proof}[Proof of Theorem \ref{theorem-1}] It is enough to prove the statement for $k=n+1$ since we may apply induction.
 
 Denote
 \[S=\left\lbrace
@@ -126,7 +133,7 @@ Indeed, the inclusion $\mathrm{Z}(f_{1}, \ldots, f_{n+1}) \subset \mathrm{Z}(g_{
 by the definition of $T$ the set $\mathrm{Z}(g_{1}, \ldots, g_{n})$ is disjoint from $X \setminus \mathrm{Z}(f_{1}, \ldots, f_{n+1})$, i.e., $\mathrm{Z}(g_{1}, \ldots, g_{n}) \subset \mathrm{Z}(f_{1}, \ldots, f_{n+1})$.
 \end{proof}
 
-In order to prove Proposition \ref{PROP1} we need the following.
+In order to prove Proposition \ref{prop-1} we need the following.
 
 \begin{lemma}\label{matrix thy}
 \lean{matrix_rank_lemma}
@@ -142,7 +149,7 @@ $A=BM$.
 	Put $B=G_{1}^{-1}I_{r, n, n}G_{3}^{-1}$ and $M= G_{3}^{}I_{n, n, m}G_{2}^{-1}$.
 	\end{proof}
 
-\begin{proof}[Proof of Proposition \ref{PROP1}]
+\begin{proof}[Proof of Proposition \ref{prop-1}]
 For every point $P \in \mathbb{P}^{n}(\F)$ choose a set of homogeneous
 coordinates for $P$ and denote it by $c_{P}$. Define $X_{n}=\left\lbrace c_{P} \colon P \in \mathbb{P}^{n}(\F) \right\rbrace$. The cardinality of $X_{n}$ is $\frac{q^{n+1}-1}{q-1}=\frac{q^{n+1}-q}{q-1}+1$. Consider $f_{1}, \ldots, f_{n+1} \in \mathrm{Map}(X_{n},\F)$ defined in the following way: for every $x\in X_{n}$ put
 \[f_{i}(x) = \text{the } i\text{th coordinate of } x.\]
@@ -166,7 +173,7 @@ Hence by  Lemma \ref{lemat} we get that  there is $x \in X_{n}$ belonging to $\m
 
 
 \begin{proof}[Proof of Corollary \ref{wniosek}]
-	For any positive integer $n$ we have $\frac{q^{n+1}-q}{q-1}\ge q^{n}=\left| \mathbb{A}^{n}(\F)\right|$. Applying Theorem \ref{THM1} and some elementary algebra, we get the assertion.
+	For any positive integer $n$ we have $\frac{q^{n+1}-q}{q-1}\ge q^{n}=\left| \mathbb{A}^{n}(\F)\right|$. Applying Theorem \ref{theorem-1} and some elementary algebra, we get the assertion.
 \end{proof}
 
 \begin{remark}
@@ -180,7 +187,7 @@ Hence by  Lemma \ref{lemat} we get that  there is $x \in X_{n}$ belonging to $\m
 		r(f)=f |_{\mathbb{P}^{n}(\F)\setminus\left\lbrace \alpha\right\rbrace}.
 	\end{array}\]
 	For any positive integer $n$ we have \[\left| \mathbb{P}^{n}(\F)\setminus\left\lbrace \alpha\right\rbrace\right|=\left| \mathbb{P}^{n}(\F)\right| -1 = \frac{q^{n+1}-1}{q-1}-1= \frac{q^{n+1}-q}{q-1}.\]
-	So we apply Theorem \ref{THM1} to get
+	So we apply Theorem \ref{theorem-1} to get
 	$\bar{g_{1}}, \ldots, \bar{g_{n}}\in \mathrm{Span}(\bar{f_{1}}, \ldots, \bar{f_{k}})$
 	such that $\mathrm{Z}(\bar{g_{1}}, \ldots, \bar{g_{n}}) =\mathrm{Z}(\bar{f_{1}}, \ldots, \bar{f_{k}})$. Let $A \in M_{k, n}(\F)$ be such that
 	\[\left[ \begin{array}{c}
