@@ -1,1 +1,1 @@
-import fineqs.Example
+import fineqs.Main
