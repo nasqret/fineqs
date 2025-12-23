@@ -24,7 +24,7 @@ It turns out that we can avoid dealing with rings; the vector space structure is
 as in the theorem cited above, our result again produces $n$ equations; moreover, we show that
 these new equations can be chosen to be linear combinations with \textit{scalar} coefficients of
 the old ones,
-so, roughly speaking, they remain of the same type (see Corollaries \ref{wniosek} and \ref{wniosek1},
+so, roughly speaking, they remain of the same type (see Corollaries \ref{corollary-3} and \ref{corollary-4},
 with accompanying examples), and our proof is surprisingly elementary.   \\
 
 \chapter{Notation}
@@ -54,7 +54,7 @@ $\mathrm{Z}(g_{1}, \ldots, g_{n})=\mathrm{Z}(f_{1}, \ldots, f_{k})$.
 This theorem is best possible with respect to the cardinality of $X$. Indeed, we have the
 following.
 
-\begin{proposition}\label{prop-1}
+\begin{proposition}\label{prop-2}
 \lean{prop_1}
 \leanok
 For every field $\F$ and every positive integer $n$ there are a set $X_{n}$ of cardinality
@@ -65,7 +65,7 @@ for any $g_{1}, \ldots, g_{n} \in \mathrm{Span}(f_{1}, \ldots, f_{n+1})$.
 
 We have two immediate corollaries of Theorem \ref{theorem-1} of interest in algebraic geometry.
 
-\begin{corollary}\label{wniosek}
+\begin{corollary}\label{corollary-3}
 \lean{corollary_2}
 \leanok
 Let $n > 0$ and let $\phi \colon \mathcal{F} \to \mathrm{Map}(\mathbb{A}^{n}(\F),\F)$ be a
@@ -78,7 +78,7 @@ The space $\mathcal{F}$ can be, for example, a space of polynomials in $n$ varia
 total degree.
 
 
-\begin{corollary}\label{wniosek1}
+\begin{corollary}\label{corollary-4}
 \lean{corollary_3}
 \leanok
 \uses{theorem-1}
@@ -93,7 +93,7 @@ total degree, the space of quadratic (or higher degree) forms in $n+1$ variables
 diagonal forms in $n+1$ variables, etc.\\
 
 
-Before we present the proofs of Theorem \ref{theorem-1} and Proposition \ref{prop-1}, we
+Before we present the proofs of Theorem \ref{theorem-1} and Proposition \ref{prop-2}, we
 separately state their following ingredient.
 
 Let $\K$ be an arbitrary field, and $n$ be a positive integer. Denote by $\mathcal{M}_{n}$ the
@@ -101,7 +101,7 @@ set of all matrices in $M_{n, n+1}(\K)$ in reduced row echelon form having the r
 by $N(M)$ the null space of a matrix $M$, by $\theta$ the zero vector in $\K^{n+1}$, and by
 $\sim$ the equivalence relation which identifies points lying on the same line through the origin.
 
-\begin{lemma}\label{lemat}
+\begin{lemma}\label{lemma-5}
 \lean{theorem_1_aux}
 \leanok
 The map
@@ -140,7 +140,7 @@ is bijective, the lemma follows.
 
 \begin{proof}[Proof of Theorem \ref{theorem-1}]
 \leanok
-\uses{lemat}
+\uses{lemma-5}
 \proves{theorem-1}
 It is enough to prove the statement for $k=n+1$ since we may apply induction.
 
@@ -148,10 +148,10 @@ Denote
 \[S=\left\lbrace
 [f_{1}(x) \colon  \ldots \colon  f_{n+1}(x)] \colon x \in X \setminus \mathrm{Z}(f_{1}, \ldots, f_{n+1})
 \right\rbrace. \]
-By Lemma \ref{lemat} every element $s$ of $S$ defines a unique matrix in $\mathcal{M}_{n}$;
+By Lemma \ref{lemma-5} every element $s$ of $S$ defines a unique matrix in $\mathcal{M}_{n}$;
 denote this matrix by $M_{s}$. Examine the set
 \[T=\mathcal{M}_{n}\setminus \left\lbrace M_{s} \colon s \in S \right\rbrace. \]
-By Lemma \ref{lemat} the number of elements in $\mathcal{M}_{n}$ equals the cardinality of
+By Lemma \ref{lemma-5} the number of elements in $\mathcal{M}_{n}$ equals the cardinality of
 $\mathbb{P}^{n}(\F)$, i.e., $\frac{q^{n+1}-1}{q-1}$. The number of elements in $S$ is at most
 the cardinality of $X$, i.e., $\frac{q^{n+1}-q}{q-1}$. Hence the cardinality of $T$ is at least
 $\frac{q^{n+1}-1}{q-1}-\frac{q^{n+1}-q}{q-1}=1$. So choose a matrix $M\in T$. Our
@@ -171,9 +171,9 @@ from $X \setminus \mathrm{Z}(f_{1}, \ldots, f_{n+1})$, i.e.,
 $\mathrm{Z}(g_{1}, \ldots, g_{n}) \subset \mathrm{Z}(f_{1}, \ldots, f_{n+1})$.
 \end{proof}
 
-In order to prove Proposition \ref{prop-1} we need the following.
+In order to prove Proposition \ref{prop-2} we need the following.
 
-\begin{lemma}\label{matrix_thy}
+\begin{lemma}\label{lemma-6}
 \lean{matrix_rank_lemma}
 \leanok
 Let $\K$ be an arbitrary field. For any matrix $A \in M_{n, m}(\K)$ where $n\le m$ there exist a
@@ -194,10 +194,10 @@ transforming $I_{n, n, m}G_{2}^{-1}$ into reduced row echelon form. We have
 Put $B=G_{1}^{-1}I_{r, n, n}G_{3}^{-1}$ and $M= G_{3}^{}I_{n, n, m}G_{2}^{-1}$.
 \end{proof}
 
-\begin{proof}[Proof of Proposition \ref{prop-1}]
+\begin{proof}[Proof of Proposition \ref{prop-2}]
 \leanok
-\uses{matrix_thy}
-\proves{prop-1}
+\uses{lemma-5,lemma-6}
+\proves{prop-2}
 For every point $P \in \mathbb{P}^{n}(\F)$ choose a set of homogeneous coordinates for $P$ and
 denote it by $c_{P}$. Define $X_{n}=\left\lbrace c_{P} \colon P \in \mathbb{P}^{n}(\F) \right\rbrace$.
 The cardinality of $X_{n}$ is $\frac{q^{n+1}-1}{q-1}=\frac{q^{n+1}-q}{q-1}+1$. Consider
@@ -217,35 +217,37 @@ f_{1}\\
 f_{n+1}
 \end{array}\right]\]
 for some matrix $A \in M_{n, n+1}(\F)$.
-By Lemma \ref{matrix_thy} there exist a matrix $M \in M_{n, n+1}(\F)$ in reduced row echelon form
+By Lemma \ref{lemma-6} there exist a matrix $M \in M_{n, n+1}(\F)$ in reduced row echelon form
 having the rank equal to $n$, and a matrix $B \in M_{n, n}(\F)$ such that $A=BM$. Hence by
-Lemma \ref{lemat} we get that there is $x \in X_{n}$ belonging to
+Lemma \ref{lemma-5} we get that there is $x \in X_{n}$ belonging to
 $\mathrm{Z}(g_{1}, \ldots, g_{n})$.
 \end{proof}
 
 
-\begin{proof}[Proof of Corollary \ref{wniosek}]
+\begin{proof}[Proof of Corollary \ref{corollary-3}]
 \leanok
-\proves{wniosek}
+\proves{corollary-3}
+\uses{theorem-1}
 For any positive integer $n$ we have $\frac{q^{n+1}-q}{q-1}\ge q^{n}=\left| \mathbb{A}^{n}(\F)\right|$.
 Applying Theorem \ref{theorem-1} and some elementary algebra, we get the assertion.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{remark-7}
 \lean{remark_example}
 \leanok
 It has been suggested by the reviewer of this paper to include the following example to
 demonstrate that although the bound $\frac{q^{n+1}-q}{q-1}\ge q^{n}$ used in the proof of
-Corollary \ref{wniosek} is rather crude, the result is sharp for any $q$. Consider the system of
+Corollary \ref{corollary-3} is rather crude, the result is sharp for any $q$. Consider the system of
 $n$ polynomials $f_{i}(x_{1}, \ldots, x_{n})=x_{i}$. While
 $\mathrm{Z}(f_{1}, \ldots, f_{k})=\left\lbrace \theta\right\rbrace$, any system of $n-1$
 combinations of them has at least $q$ common zeros.
 \end{remark}
 
 
-\begin{proof}[Proof of Corollary \ref{wniosek1}]
+\begin{proof}[Proof of Corollary \ref{corollary-4}]
 \leanok
-\proves{wniosek1}
+\proves{corollary-4}
+\uses{theorem-1}
 Let $\left\lbrace f_{1}, \ldots, f_{k}\right\rbrace $ be the image via $\phi$ of a subset of
 $\mathcal{F}$. Let $\alpha \in \mathrm{Z}(f_{1}, \ldots, f_{k})$. Denote by
 $\bar{f_{1}}, \ldots, \bar{f_{k}}$ the images of $f_{1}, \ldots, f_{k}$ via the restriction
@@ -293,7 +295,7 @@ We are done, since
 \chapter*{Acknowledgements}
 We are grateful to Grzegorz Banaszak and Bartosz Naskr\k{e}cki for discussions and suggestions.
 We wish to thank an anonymous referee for many improvements; in particular, for suggesting the concise
-formulation and proof of Lemma \ref{lemat}.
+formulation and proof of Lemma \ref{lemma-5}.
 
 \bibliographystyle{plain}
 \begin{thebibliography}{W}
